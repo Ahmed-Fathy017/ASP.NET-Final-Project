@@ -1,0 +1,61 @@
+﻿@page
+@model AspPageWebApplication.Pages.Universities.ListModel
+@{
+}
+
+<h1>Universities</h1>
+
+<form method="get">
+
+    <div class="form-group">
+
+        <div class="input-group">
+
+            <input type="search" placeholder="Please Enter Seacrh Name" asp-for="SearchName"  class=form-control />
+            <button type="submit" class="btn btn-primary">Search</button>
+
+        </div>
+       
+    </div>
+
+</form>
+
+<table class="table">
+    <tr>
+        <td class="font-weight-bold">ID</td>
+        <td class="font-weight-bold">Name</td>
+        <td class="font-weight-bold">Address</td>
+        <td class="font-weight-bold">Student Count</td>
+    </tr>
+
+    @foreach (var uni in Model.UniversityDTOList.Universities) 
+    {
+        <tr>
+            <td>@uni.Id</td>
+            <td>@uni.Name</td>
+            <td>@uni.Address</td>
+            <td>@uni.StudentCount</td>
+
+            <td>
+            <a asp-page="/Universities/Details" asp-route-UniversityId="@uni.Id">
+                Details
+            </a>
+            </td>
+
+            <td>
+            <a asp-page="/Universities/Edit" asp-route-UniversityId="@uni.Id">
+                Edit
+            </a>
+            </td>
+
+            <td>
+            <a asp-page="/Universities/Delete" asp-route-UniversityId="@uni.Id">
+                Delete
+            </a>
+            </td>
+
+        </tr>
+    }
+</table>
+
+<a asp-page="/Universities/Edit" class="btn btn-success" asp-route-AddFlag="@Model.Flag">Add New University</a>

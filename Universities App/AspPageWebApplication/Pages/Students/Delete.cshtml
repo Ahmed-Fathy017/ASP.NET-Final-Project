@@ -1,0 +1,17 @@
+﻿@page
+@model AspPageWebApplication.Pages.Students.DeleteModel
+@{
+}
+
+<h1>Delete Student</h1>
+
+<div class="alert alert-danger">
+    Are You Sure You Want To Delete @Model.Student.Name?
+</div>
+
+<form method="post">
+    <button class="btn btn-danger" type="submit">Yes</button>
+    <a class="btn btn-primary" 
+       asp-page="../Universities/Details" 
+       asp-route-UniversityId=@Model.Student.UniversityId>Cancel</a>
+</form>

@@ -1,0 +1,78 @@
+﻿using AspPageWebApplication.Data;
+using AspPageWebApplication.Domain;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+
+namespace AspPageWebApplication.Application.ManageStudent
+{
+    public class ManageStudent : IManageStudent
+    {
+        private readonly UniversityDbContext context;
+
+        public ManageStudent(UniversityDbContext context)
+        {
+            this.context = context;
+        }
+
+        public void AddStudent(StudentDTO student, int universityId)
+        {
+            var uni = context.Universities.Where(uni => uni.Id == universityId).FirstOrDefault();
+            if (uni != null)
+            {
+                uni.Students.Add(new Student()
+                {
+                    Name = student.Name,
+                    Grade = student.Grade,
+                    UniversityId = student.UniversityId
+                });
+                context.SaveChanges();
+            }   
+        }
+
+        public void DeleteStudent(int studentId)
+        {
+            var student = context.Students.Where(st => st.Id == studentId).FirstOrDefault();
+            context.Students.Remove(student);
+            context.SaveChanges();
+        }
+
+        public void EditStudent(StudentDTO student)
+        {
+           var Student = context.Students.Where(st => st.Id == student.Id).FirstOrDefault();
+            Student.Name = student.Name;
+            Student.Grade = student.Grade;
+            context.SaveChanges();
+        }
+
+        public StudentDTO GetStudentById(int StudentId)
+        {
+            var st = context.Students.Where(st => st.Id == StudentId).FirstOrDefault();
+            if (st != null)
+            {
+                StudentDTO Student = new StudentDTO()
+                {
+                    Name = st.Name,
+                    Grade = st.Grade,
+                    Id = st.Id
+                };
+                return Student;
+            }
+            else return null;
+        }
+
+        public List<Student> GetStudentByName(string SearchName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Student> GetStudentsByUniversityId(int universityId)
+        {
+            var students = context.Universities.Where(uni => uni.Id == universityId)
+                .Include(uni => uni.Students).FirstOrDefault().Students.ToList();
+            return students;
+        }
+    }
+}

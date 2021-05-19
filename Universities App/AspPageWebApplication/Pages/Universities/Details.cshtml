@@ -1,0 +1,67 @@
+﻿@page
+@model AspPageWebApplication.Pages.Universities.DetailsModel
+@{
+}
+
+<h1>@Model.University.Name Details </h1>
+
+<h3 class="font-weight-bold">Name: @Model.University.Name</h3>
+<h3 class="font-weight-bold">Address: @Model.University.Address</h3>
+<h3 class="font-weight-bold">ID: @Model.University.Id</h3>
+
+
+
+<h3 class="font-weight-bold">Students</h3>
+
+<form method="get">
+
+    <div class="form-group">
+
+        <div class="input-group">
+
+            <input type="search" placeholder="Please Enter Seacrh Name" asp-for="SearchName" class=form-control />
+            <input type="hidden" asp-for="UniversityId" class=form-control />
+            <button type="submit" class="btn btn-primary">Search</button>
+
+        </div>
+
+    </div>
+
+</form>
+
+<table class="table">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Grade</td>
+    </tr>
+
+
+    @foreach (var st in Model.StudentsList.Students)
+    {
+        <tr>
+            <td>@st.Id</td>
+            <td>@st.Name</td>
+            <td>@st.Grade</td>
+
+            <td>
+                <a asp-page="/Students/Edit" asp-route-StudentId="@st.Id">
+                    Edit
+                </a>
+            </td>
+
+            <td>
+                <a asp-page="/Students/Delete" asp-route-StudentId="@st.Id">
+                    Delete
+                </a>
+            </td>
+        </tr>
+
+
+    }
+</table>
+
+
+<a asp-page="../Students/Edit" class="btn btn-success"
+   asp-route-UniversityId="@Model.University.Id">Add New Student</a>
+<a asp-page="/Universities/List" class="btn btn-secondary">Back to Universities List</a>

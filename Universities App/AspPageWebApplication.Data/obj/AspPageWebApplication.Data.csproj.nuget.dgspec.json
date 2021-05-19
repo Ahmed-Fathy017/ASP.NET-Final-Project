@@ -1,0 +1,132 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Data\\AspPageWebApplication.Data.csproj": {}
+  },
+  "projects": {
+    "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Data\\AspPageWebApplication.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Data\\AspPageWebApplication.Data.csproj",
+        "projectName": "AspPageWebApplication.Data",
+        "projectPath": "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Data\\AspPageWebApplication.Data.csproj",
+        "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
+        "outputPath": "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Domain\\AspPageWebApplication.Domain.csproj": {
+                "projectPath": "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Domain\\AspPageWebApplication.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Domain\\AspPageWebApplication.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Domain\\AspPageWebApplication.Domain.csproj",
+        "projectName": "AspPageWebApplication.Domain",
+        "projectPath": "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Domain\\AspPageWebApplication.Domain.csproj",
+        "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
+        "outputPath": "F:\\ITI Courses\\Asp.net\\Git Labs\\Lab04-05-MyWebApplication\\AspPageWebApplication.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+﻿@page
+@model AspPageWebApplication.Pages.Universities.EditModel
+@{
+}
+
+@if (Model.University.Id == 0)
+{
+    <h1>Add University</h1>
+}
+else
+{
+    <h1>Edit University</h1>
+}
+
+<form method="post">
+    <div class="form-group">
+        <input asp-for="University.Id" type="hidden" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input asp-for="University.Name" class="form-control" />
+        <span asp-validation-for="University.Name"></span>
+    </div>
+
+    <div class="form-group">
+        <input asp-for="University.Address" class="form-control" />
+        <span asp-validation-for="University.Address"></span>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-page="./List" class="btn btn-success">Cancel</a>
+</form>
